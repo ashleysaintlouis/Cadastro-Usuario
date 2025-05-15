@@ -1,0 +1,33 @@
+nav {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav a {
+    margin: 0 5px;
+    padding: 5px;
+    text-decoration: none;
+    color: #fff;
+}
+
+nav .nav_links {
+    margin: 0 1.5rem;
+}
+
+nav .nav_links .link {
+    border-radius: .2rem;
+    background-color: #CCC;
+}
+
+nav .nav_links .link_home:hover {
+    background-color: #bd91f3;
+}
+
+nav .nav_links .link_cadastrar:hover {
+    background-color: #46d4a4;
+}
+
+nav .nav_links .link_login:hover {
+    background-color:#3799b6;
+}
