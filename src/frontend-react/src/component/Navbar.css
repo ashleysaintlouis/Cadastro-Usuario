@@ -1,7 +1,12 @@
 nav {
-    margin-top: 1rem;
+    margin: 1rem 0 2rem;
+    padding: 0.7rem;
     display: flex;
     justify-content: space-between;
+    border-radius: 1rem;
+    box-shadow: #bd91f3 2px -2px, #bd91f3 -2px 3px;
+    background-color: #f0f0f0;
+
 }
 
 nav a {
@@ -12,22 +17,24 @@ nav a {
 }
 
 nav .nav_links {
-    margin: 0 1.5rem;
+    margin: auto 1rem;
 }
 
 nav .nav_links .link {
     border-radius: .2rem;
-    background-color: #CCC;
+    border: 2px solid #bd91f3;
+    background-color: transparent;
+    color: #bd91f3;
 }
 
 nav .nav_links .link_home:hover {
-    background-color: #bd91f3;
+    border: 2px solid #946ec4;
 }
 
 nav .nav_links .link_cadastrar:hover {
-    background-color: #46d4a4;
+    border: 2px solid #46d4a4;
 }
 
 nav .nav_links .link_login:hover {
-    background-color:#3799b6;
+    border: 2px solid #3799b6;
 }

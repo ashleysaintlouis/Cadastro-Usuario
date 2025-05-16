@@ -1,4 +1,5 @@
 import axios from "axios";
+import "./Register.css";
 import React, { useState } from "react";
 
 const Register = () => {
@@ -21,8 +22,8 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="register">
+      <form className="form_register" onSubmit={handleSubmit}>
         <label>
           {" "}
           Nome:
@@ -50,8 +51,9 @@ const Register = () => {
             onChange={(e) => setSenha(e.target.value)}
             value={senha}
           />
-          <input type="submit" value="Cadastrar" />
         </label>
+
+        <input className="btn_cadastrar" type="submit" value="Cadastrar" />
       </form>
     </div>
   );
