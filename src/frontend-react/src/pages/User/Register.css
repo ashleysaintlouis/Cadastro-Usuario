@@ -7,9 +7,8 @@
     flex-direction: column;
     justify-self: center;
     justify-content: center;
-    text-align: center;
+    padding: 1.5rem;
     max-width: 60%;
-    min-width: 40%;
     min-height: 20rem;
     border-radius: .2rem;
     box-shadow: #ccc 2px -2px, #ccc -2px 3px;
@@ -17,17 +16,20 @@
 }
 
 .register .form_register label {
-    margin: .2rem;
-    padding: .2rem;
+    display: flex;
+    flex-direction: column;
+    margin: .2rem 0;
+    padding: .2rem 0;
 }
 
-.register .form_register label input {
-    margin: 0 .5rem;
-    padding: .4rem 3rem;
+.register .form_register input {
+    padding: .4rem .6em;
     border: 1px solid;
-    border-radius: .5rem;
+    border-radius: .2rem;
 }
 
 .register .form_register .btn_cadastrar {
-    padding: 4px;
+    border: 2px solid #946ec4;
+    color: #946ec4;
+    background-color: transparent;
 }
