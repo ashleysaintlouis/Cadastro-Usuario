@@ -1,33 +1,31 @@
-package io.github.ashleysaintlouis.apicadastrousuario.repository.dto;
+package io.github.ashleysaintlouis.apicadastrousuario.repository.dtos;
 
 
 public class UsuarioDTO {
-    private Long id;
     private String nome;
     private String email;
+    private String senha;
 
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
     public UsuarioDTO() {
-        this.id = id;
         this.nome = nome;
         this.email = email;
+        this.senha = senha;
     }
 
     @Override
     public String toString() {
         return "UsuarioDTO{" +
-                "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", email='" + email + '\'' +
                 '}';
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getNome() {

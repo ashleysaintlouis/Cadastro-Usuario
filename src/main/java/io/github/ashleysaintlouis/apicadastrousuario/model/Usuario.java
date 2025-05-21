@@ -1,16 +1,15 @@
 package io.github.ashleysaintlouis.apicadastrousuario.model;
 
-import io.github.ashleysaintlouis.apicadastrousuario.repository.dto.UsuarioDTO;
 import jakarta.persistence.*;
 
 @Entity
-public class Usuario extends UsuarioDTO {
+public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
 
     @Column(nullable = false, name = "nomeUsuario")
-    private String nome;
+    public String nome;
 
     @Column(nullable = false, name = "email", unique = true)
     private String email;

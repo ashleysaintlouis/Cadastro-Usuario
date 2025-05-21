@@ -3,9 +3,8 @@ nav {
     padding: 0.7rem;
     display: flex;
     justify-content: space-between;
-    border-radius: 1rem;
-    box-shadow: #bd91f3 2px -2px, #bd91f3 -2px 3px;
-    background-color: #f0f0f0;
+    box-shadow: #bd91f3 0px 3px;
+    background-color: #f0f0f0a2;
 
 }
 

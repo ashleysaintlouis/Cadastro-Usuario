@@ -6,11 +6,16 @@ const Register = () => {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const [confsenha, setConfsenha] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const novoUsuario = { nome, email, senha };
-    axios
+    if (senha != confsenha) {
+      alert("Senha diferente da confirmação de senha!");
+    }
+    else {
+      const novoUsuario = { nome, email, senha };
+      axios
       .post("http://localhost:8080/usuario", novoUsuario)
       .then((response) => {
         console.log("Usuário salvo:", response.data);
@@ -19,11 +24,13 @@ const Register = () => {
       .catch((error) => {
         console.error("Erro ao salvar usuário:", error);
       });
+    }
   };
 
   return (
     <div className="register">
       <form className="form_register" onSubmit={handleSubmit}>
+        <h1>Cadastre-se</h1>
         <label>
           {" "}
           Nome:
@@ -50,6 +57,15 @@ const Register = () => {
             type="password"
             onChange={(e) => setSenha(e.target.value)}
             value={senha}
+          />
+        </label>
+                <label>
+          {" "}
+          Confirme senha:
+          <input
+            type="password"
+            onChange={(e) => setConfsenha(e.target.value)}
+            value={confsenha}
           />
         </label>
 
