@@ -1,0 +1,49 @@
+
+.form_register_login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    border-radius: .2rem;
+    box-shadow: #ccc 2px -2px, #ccc -2px 3px;
+    background-color: #fff;
+    width: 100%;
+    max-width: 400px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    margin: .5rem 0;
+    width: 100%;
+    max-width: 300px;
+}
+
+.input_text {
+    width: 100%;
+    max-width: 300px;
+    height: 35px;
+    border: 1px solid rgba(204, 204, 204, 0.85);
+    border-radius: .2rem;
+    padding: 0 .5rem;
+    margin-top: .2rem;
+}
+
+.input_button {
+    border: 2px solid;
+    border-radius: .2rem;
+    width: 100%;
+    max-width: 300px;
+    height: 35px;
+    margin-top: 1rem;
+    color: #ffffff;
+    font-weight: 900;
+    cursor: pointer;
+}
+.input_button_register {
+    background-color: #61CC80;
+}
+
+.input_button_login {
+    background-color: #60C5F1;
+}

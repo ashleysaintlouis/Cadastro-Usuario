@@ -1,4 +1,4 @@
-package io.github.ashleysaintlouis.apicadastrousuario.service.user;
+package io.github.ashleysaintlouis.apicadastrousuario.service;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -12,7 +12,7 @@ import java.util.Date;
 @Component
 public class TokenService {
 
-    private static final String CHAVE_SECRETA = "ChaveDeUsuarioSeguraComMaisDe32Caracteres!123";
+    private static final String CHAVE_SECRETA = "eee6245c8010e191d18839384aaa811197d9a3184941a8d73f8b73688921496e";
     private Key chaveAssinatura;
 
     @PostConstruct

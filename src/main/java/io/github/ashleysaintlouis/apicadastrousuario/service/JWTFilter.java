@@ -1,7 +1,7 @@
-package io.github.ashleysaintlouis.apicadastrousuario.service.user;
+package io.github.ashleysaintlouis.apicadastrousuario.service;
 
-import io.github.ashleysaintlouis.apicadastrousuario.model.Usuario;
-import io.github.ashleysaintlouis.apicadastrousuario.repository.UsuarioRepository;
+import io.github.ashleysaintlouis.apicadastrousuario.model.Pessoa;
+import io.github.ashleysaintlouis.apicadastrousuario.repository.PessoaRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -20,7 +20,7 @@ public class JWTFilter extends OncePerRequestFilter {
     @Autowired
     private TokenService tokenService;
     @Autowired
-    private UsuarioRepository repository;
+    private PessoaRepository pessoaRepository;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request,
@@ -32,7 +32,7 @@ public class JWTFilter extends OncePerRequestFilter {
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
             String token = authHeader.replace("Bearer ", "");
             String email = tokenService.validarToken(token);
-            Usuario user = repository.findByEmail(email).orElse(null);
+            Pessoa user = pessoaRepository.findByEmail(email).orElse(null);
             if (user != null) {
                 UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
                         user, null, List.of()

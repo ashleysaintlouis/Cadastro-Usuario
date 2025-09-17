@@ -1,69 +1,40 @@
 package io.github.ashleysaintlouis.apicadastrousuario.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import lombok.*;
+
+import java.util.Date;
 
 @Entity
+@Setter
+@Getter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class Usuario {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long usuarioId;
 
-    @Column(nullable = false, name = "nomeUsuario")
-    public String nome;
-
-    @Column(nullable = false, name = "email", unique = true)
-    private String email;
-
-    @Column(nullable = false)
+    @Column(length = 255, nullable = false)
+    @NotBlank
     private String senha;
 
-    public Usuario(Long id, String nome, String email) {
-        super();
-    }
+    @Enumerated(EnumType.STRING)
+    @Column(length = 20, nullable = false)
+    private StatusPerfilUsuario status; // enum já mapeado como STRING
 
-    public Usuario() {
-        super();
-    }
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "perfil_usuario_id", referencedColumnName = "perfif_usuario_id")
+    private PerfilUsuario perfilUsuario;
 
-    public long getId() {
-        return id;
-    }
+    @OneToOne
+    @JoinColumn(name = "pessoa_id", referencedColumnName = "pessoaId")
+    private Pessoa pessoa;
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    @Override
-    public String toString() {
-        return "Usuario{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", email='" + email + '\'' +
-                ", senha='" + senha + '\'' +
-                '}';
-    }
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(nullable = false)
+    private Date dataCriacao = new Date();
 }
